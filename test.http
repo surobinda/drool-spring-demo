@@ -1,0 +1,2 @@
+curl --location 'http://localhost:8080/calculate-fare' --header 'Content-Type: application/json' --data '{"isNightSurcharge": true,"distanceInMile": 200}'
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/calculate-fare -d "{\"isNightSurcharge\": true,\"distanceInMile\": 200}"
