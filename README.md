@@ -11,4 +11,13 @@ For further reference, please consider the following sections:
 ### Guides
 Just to iterate this is very simple, Drools implementation could go for more complex implementation based on scenarios.
 
+### Sample postman requests payload
+* {
+  "isNightSurcharge": false,
+  "distanceInMile": 10
+  }
+* {
+  "isNightSurcharge": true,
+  "distanceInMile": 150
+  }
 

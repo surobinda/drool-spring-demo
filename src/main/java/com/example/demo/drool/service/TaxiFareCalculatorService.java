@@ -16,7 +16,7 @@ public class TaxiFareCalculatorService {
     public Fare calculateFare(TaxiRide taxiRide) {
         Fare fare = new Fare();
         KieSession kieSession = kieContainer.newKieSession();
-        kieSession.setGlobal("rideFare", fare);
+        kieSession.setGlobal("fare", fare);
         kieSession.insert(taxiRide);
         kieSession.fireAllRules();
         kieSession.dispose();

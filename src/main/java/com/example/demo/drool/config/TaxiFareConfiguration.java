@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan("com.baeldung.spring.drools.service")
 public class TaxiFareConfiguration {
-    private static final String drlFile = "TAXI_FARE_RULE.drl";
+    private static final String drlFile = "FareRule.drl.xls";
 
     @Bean
     public KieContainer kieContainer() {
