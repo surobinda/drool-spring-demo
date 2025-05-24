@@ -11,7 +11,7 @@ end
 
 rule "Calculate Taxi Fare - without surcharge and long distance"
     when
-        taxiRideInstance:TaxiRide(isNightSurcharge == false && distanceInMile > 100);
+        taxiRideInstance:TaxiRide(isNightSurcharge == false && distanceInMile >= 100);
     then
       	rideFare.setNightSurcharge(new Long(10));
        	rideFare.setRideFare(new Long(100));
