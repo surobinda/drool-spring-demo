@@ -14,12 +14,14 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.baeldung.spring.drools.service")
 public class TaxiFareConfiguration {
     private static final String drlFile = "FareRule.drl.xls";
+    private static final String additionalDrlFile = "FareRule-Aditional.drl.xls";
 
     @Bean
     public KieContainer kieContainer() {
         KieServices kieServices = KieServices.Factory.get();
-
         KieFileSystem kieFileSystem = kieServices.newKieFileSystem();
+        //Here loading order of rule files does not matter
+        kieFileSystem.write(ResourceFactory.newClassPathResource(additionalDrlFile));
         kieFileSystem.write(ResourceFactory.newClassPathResource(drlFile));
         KieBuilder kieBuilder = kieServices.newKieBuilder(kieFileSystem);
         kieBuilder.buildAll();

@@ -21,3 +21,8 @@ Just to iterate this is very simple, Drools implementation could go for more com
   "distanceInMile": 150
   }
 
+### Few important points and best practice
+* Use salience to explicitly set rule priorities.
+* Use agenda-group or ruleflow-group for structured rule execution.
+* Organize rules semantically — one DRL file for base logic, another for overrides or exceptions, but control execution explicitly.
+

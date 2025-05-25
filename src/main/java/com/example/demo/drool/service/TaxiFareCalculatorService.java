@@ -16,6 +16,8 @@ public class TaxiFareCalculatorService {
     public Fare calculateFare(TaxiRide taxiRide) {
         Fare fare = new Fare();
         KieSession kieSession = kieContainer.newKieSession();
+        //In case need to fire a set of Rules we need to make  use of agenda groups
+        //kieSession.getAgenda().getAgendaGroup("peak-fare").setFocus();
         kieSession.setGlobal("fare", fare);
         kieSession.insert(taxiRide);
         kieSession.fireAllRules();
